@@ -1,6 +1,8 @@
 import SERVER from './src/config/app.js'
 import DATA_BASE from './src/config/db.js'
 import { contactEmail } from './src/helpers/nodeMailer.js'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const { PORT } = process.env
 const HTTP_PORT = PORT || 3001
