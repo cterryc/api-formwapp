@@ -6,6 +6,7 @@ import login from '../routes/login.routes.js'
 import register from '../routes/register.routes.js'
 import verify from '../routes/verify.routes.js'
 import verifiedEmail from '../routes/verifiedEmail.routes.js'
+import user from '../routes/user.routes.js'
 // importar las rutas arriba.
 
 const SERVER = express()
@@ -29,6 +30,7 @@ SERVER.use('/login', login)
 SERVER.use('/register', register)
 SERVER.use('/verify', verify)
 SERVER.use('/verifiedEmail', verifiedEmail)
+SERVER.use('/user', user)
 // Usar rutas importadas arriba:.
 
 // Captura de Errores

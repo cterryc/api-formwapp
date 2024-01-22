@@ -12,7 +12,7 @@ export async function getUserByEmail (comparing) {
     where: {
       email
     },
-    attributes: { exclude: ['token', 'id'] }
+    attributes: { exclude: ['token'] }
   })
   if (userByEmail) {
     const passwordMatch = await bcrypt.compare(password, userByEmail.password)
@@ -22,7 +22,7 @@ export async function getUserByEmail (comparing) {
         where: {
           email
         },
-        attributes: { exclude: ['token', 'id', 'password', 'hashgoogle'] }
+        attributes: { exclude: ['token', 'password', 'hashgoogle'] }
       })
       return { details: withoutPass, status: 200 }
     } else {

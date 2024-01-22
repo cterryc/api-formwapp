@@ -17,7 +17,7 @@ export const postVerifiedEmail = async (req, res, next) => {
       )
       const updatedUser = await Users.findOne({
         where: { id: findEmail.id },
-        attributes: { exclude: ['id', 'token', 'password', 'hashgoogle'] }
+        attributes: { exclude: ['token', 'password', 'hashgoogle'] }
       })
       res.status(200).send({ details: updatedUser })
     } else {

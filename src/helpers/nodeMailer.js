@@ -1,10 +1,13 @@
 import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
 dotenv.config()
-const { PASS_EMAIL, EMISOR_EMAIL } = process.env
-
-const verify = 'http://localhost:5173'
-// const verify = 'https://formwapp.vercel.app'
+const { PASS_EMAIL, EMISOR_EMAIL, LOCAL } = process.env
+let verify
+if (LOCAL) {
+  verify = 'http://localhost:5173'
+} else {
+  verify = 'https://formwapp.vercel.app'
+}
 
 export const contactEmail = nodemailer.createTransport({
   service: 'gmail',

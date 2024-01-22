@@ -82,6 +82,9 @@ const Users = DATA_BASE.define('user',
     inputData: {
       type: DataTypes.JSON,
       defaultValue: {}
+    },
+    tel: {
+      type: DataTypes.JSON
     }
   },
   {

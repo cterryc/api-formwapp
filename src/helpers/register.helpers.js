@@ -24,7 +24,6 @@ export const createUser = async (userFromBody) => {
 
     // Excluir los atributos 'token' y 'password' antes de enviar la respuesta
     delete userResponse.password
-    delete userResponse.id
     delete userResponse.hashgoogle
 
     console.log(userResponse, 'esto es creatingUser')

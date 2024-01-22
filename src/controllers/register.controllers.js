@@ -3,6 +3,7 @@ import { createUser } from '../helpers/register.helpers.js'
 
 export const postRegister = async (req, res) => {
   const body = req.body
+  body.email = body.email.toLowerCase()
   try {
     // retorna un objeto con los datos a enviar
     const creatingUser = await createUser(body)
@@ -17,6 +18,8 @@ export const postRegister = async (req, res) => {
       }
     })
     // lo de arriba es apra enviar el Email de verificación
+
+    console.log(emailData)
 
     delete creatingUser.token
     res.status(200).send({ details: creatingUser })
