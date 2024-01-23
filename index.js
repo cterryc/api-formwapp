@@ -13,7 +13,7 @@ contactEmail.verify(error => {
   } else {
     console.log('Ready to Send Emails')
     SERVER.listen(HTTP_PORT, async () => {
-      await DATA_BASE.sync({ force: false })
+      await DATA_BASE.sync({ force: true })
       console.log(`Server is listening on port ${HTTP_PORT}`)
     })
   }
