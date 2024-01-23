@@ -13,6 +13,6 @@ export async function getByEmail (req, res, next) {
     const { details, status } = response
     return res.status(status).json({ details })
   } catch (error) {
-    next({ details: { error: error.message } })
+    return new Error(error)
   }
 };
