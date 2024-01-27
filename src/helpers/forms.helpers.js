@@ -20,3 +20,25 @@ export const createForm = async (formFromBody) => {
     return { error }
   }
 }
+
+export const findFormByToken = async (token) => {
+  try {
+    console.log(token)
+    const findFormByToken = await Forms.findOne({ where: { token } })
+    console.log('esto es findFormByToken', findFormByToken)
+    return findFormByToken
+  } catch (error) {
+    return { error }
+  }
+}
+
+export const findFormByUserId = async (userId) => {
+  try {
+    console.log(userId)
+    const findFormById = await Forms.findOne({ where: { userId } })
+    console.log('esto es findFormById', findFormById)
+    return findFormById
+  } catch (error) {
+    return { error }
+  }
+}

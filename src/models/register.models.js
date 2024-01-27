@@ -3,7 +3,8 @@ import DATA_BASE from '../config/db.js'
 import bcrypt from 'bcrypt'
 import crypto from 'crypto'
 
-const Users = DATA_BASE.define('user',
+const Users = DATA_BASE.define(
+  'user',
   {
     id: {
       type: DataTypes.INTEGER,
@@ -44,7 +45,8 @@ const Users = DATA_BASE.define('user',
     avatar: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: 'https://res.cloudinary.com/dniekrmqb/image/upload/v1699131181/fondo-avatar_yij70b.png'
+      defaultValue:
+        'https://res.cloudinary.com/dniekrmqb/image/upload/v1699131181/fondo-avatar_yij70b.png'
     },
     location: {
       type: DataTypes.STRING,
